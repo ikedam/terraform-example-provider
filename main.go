@@ -1,12 +1,14 @@
 package main
 
 import (
-	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
+	"context"
+
+	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 	"github.com/ikedam/terraform-example-provider/provider"
 )
 
 func main() {
-	plugin.Serve(&plugin.ServeOpts{
-		ProviderFunc: provider.Provider,
+	providerserver.Serve(context.Background(), provider.New, providerserver.ServeOpts{
+		Address: "ikedam.jp/example/hello",
 	})
 }
