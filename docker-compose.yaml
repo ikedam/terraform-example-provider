@@ -1,0 +1,10 @@
+services:
+  terraform:
+    profiles: [dummy]
+    image: hashicorp/terraform:1.9.4
+    environment:
+      - TF_LOG
+      - TF_CLI_ARGS
+    volumes:
+      - ./example-terraform:/workspace
+    working_dir: /workspace

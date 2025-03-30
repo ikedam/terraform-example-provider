@@ -42,7 +42,7 @@ func (p *exampleProvider) DataSources(_ context.Context) []func() datasource.Dat
 }
 
 func (d *helloWorldDataSource) Metadata(_ context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
-	resp.TypeName = "hello_world"
+	resp.TypeName = "example_hello"
 }
 
 func (d *helloWorldDataSource) Schema(_ context.Context, _ datasource.SchemaRequest, resp *datasource.SchemaResponse) {
